@@ -28,20 +28,20 @@
 
                 <!-- Product price-->
                 <strike>
-                ${{ product.price }}
+                {{ product.price }} ₫
                 </strike>
                 &nbsp;
-                ${{ product.sale_price }}
+                {{ product.sale_price }} ₫
 
 
 
         {% else %}
-            ${{ product.price }}
+          {{ product.price }} ₫
             
         {% endif %}
             <br/><br/>
 <div class="row justify-content-center">
-    <div class="col-md-2">Quantity:</div>
+    <div class="col-md-2">Số lượng:</div>
                 <div class="col-md-2">
                 <select class="form-select form-select-sm" id="qty-cart">
                   <option value="1">1</option>
@@ -53,8 +53,8 @@
                 </div>
             </div>
             <br/><br/>
-        <a href="{% url 'home'%}" class="btn btn-secondary">Home</a>
-        <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
+        <a href="{% url 'home'%}" class="btn btn-secondary">Trang chủ</a>
+        <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Thêm vào giỏ hàng</button>
 
     </center>
       </div>

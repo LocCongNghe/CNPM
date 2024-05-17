@@ -7,8 +7,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shopping Cart</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">View Your Cart...</p>
+                    <h1 class="display-4 fw-bolder">Giỏ hàng</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Xem giỏ hàng của bạn...</p>
                 </div>
             </div>
         </header>
@@ -38,20 +38,20 @@
 
                 <!-- Product price-->
                 <strike>
-                ${{ product.price }}
+                {{ product.price }} ₫
                 </strike>
                 &nbsp;
-                ${{ product.sale_price }}
+                {{ product.sale_price }} ₫
 
 
 
         {% else %}
-            ${{ product.price }}
+            {{ product.price }} ₫
             
         {% endif %}
             <br/><br/>
         <div class="row justify-content-center">
-    <div class="col-md-2">Quantity:</div>
+    <div class="col-md-2">Số lượng:</div>
                 <div class="col-md-2">
                 <select class="form-select form-select-sm" id="select{{product.id}}">
                   
@@ -71,9 +71,9 @@
                 </div>
             </div>
             <br/><br/>
-        <a href="{% url 'home'%}" class="btn btn-secondary">Home</a>
+        <a href="{% url 'home'%}" class="btn btn-secondary">Trang chủ</a>
         <button type="button" data-index="{{product.id}}" class="btn btn-secondary update-cart">Update</button>
-        <button type="button" data-index="{{product.id}}" class="btn btn-danger delete-product">Remove</button>
+        <button type="button" data-index="{{product.id}}" class="btn btn-danger delete-product">Xóa</button>
         
     </center>
       </div>
@@ -84,11 +84,15 @@
 
 
         	{% endfor %}
-            <h3>Total: ${{ totals }}</h3>
+            <div align="right">
+            <h3>Tổng: {{ totals }} ₫</h3>
+            <a href="{% url 'checkout' %}" class="btn btn-success">Thanh toán</a>
 
+            </div>
             <br/><br/><br/>
         	{% else %}
-        	There's Nothing In Your Cart...
+          <br><br><br>
+        	<p class = text-center>Không có gì trong giỏ hàng của bạn...</p>
         	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         {% endif %}
     	</div>

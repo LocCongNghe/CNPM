@@ -5,8 +5,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Search Products</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Find What You're Looking For...</p>
+                    <h1 class="display-4 fw-bolder">Bạn muốn tìm sách?</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Điền xuống dưới đây</p>
                 </div>
             </div>
         </header>
@@ -16,19 +16,20 @@
         		<center>
         			<div class="col-10">
         				<br/><br/>
+                        <br/><br/>
 <div class="card">
   <div class="card-header">
-    Search Products
+    Chúng tôi sẽ giúp bạn
   </div>
   <div class="card-body">
     <form method="POST" action="{% url 'search' %}">
         {% csrf_token %}
         <div class="mb-3">
   
-          <input type="text" class="form-control" placeholder="Search For Products" name="searched">
+          <input type="text" class="form-control" placeholder="Tên cuốn sách bạn muốn" name="searched">
         </div>
     <button type="submit" class="btn btn-secondary">
-        Search Products
+        Tìm sách
     </button>
     </form>
   </div>
@@ -61,16 +62,16 @@
 
                                     <!-- Product price-->
                                     <strike>
-                                    ${{ product.price }}
+                                    {{ product.price }} ₫
                                     </strike>
                                     &nbsp;
-                                    ${{ product.sale_price }}
+                                    {{ product.sale_price }} ₫
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
     <div class="text-center">
-        <a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id  %}">View Product</a>
+        <a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id  %}">Chi tiết sản phẩm</a>
     </div>
                             </div>
                         </div>
@@ -88,12 +89,12 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{ product.name }}</h5>
                                     <!-- Product price-->
-                                    ${{ product.price }}
+                                    {{ product.price }} ₫
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}">View Product</a></div>
+    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}">Chi tiết sản phẩm</a></div>
                             </div>
                         </div>
                     </div>

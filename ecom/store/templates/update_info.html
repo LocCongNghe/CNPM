@@ -16,13 +16,13 @@
         		
         			<div class="col-md-6 offset-md-3">
 
-        				<br/><br/>
-                    <strong>Billing Information</strong>
-                    <br/><br/>
+        				<br/>
+                    <!-- <strong>Billing Information</strong> -->
+                    
 <form method="POST" action="{% url 'update_info' %}">
     {% csrf_token %}
     
-    {{ form.as_p }}
+    <!-- {{ form.as_p }} -->
     <br/><br/>
     <strong>Shipping Information</strong>
     <br/><br/>
@@ -42,10 +42,8 @@
 <br/><br/>
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
-<br/><br/>
+
+
         			</div>
         		
         	</div>
