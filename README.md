@@ -6,3 +6,10 @@
 4. Lê Tuấn Anh - 22022642
 # Project Title
 ECOMMERCE WEBSITE
+# Installation
+
+`git clone https://github.com/LocCongNghe/CNPM.git`
+
+`cd ecom`
+
+`python manage.py runserver`
